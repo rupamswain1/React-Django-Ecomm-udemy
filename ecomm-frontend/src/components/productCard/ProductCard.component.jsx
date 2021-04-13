@@ -5,6 +5,7 @@ const ProductCard=({product})=>{
     
     return(
         <div className='cardBox'>
+        
             <div className='cardImage'>
                 <img src={`${product.image}`} className="productImage" alt={`${product.name} Image`}/>            
             </div>
@@ -17,7 +18,9 @@ const ProductCard=({product})=>{
             <div className='price'>
                 &#8377; {product.price} 
             </div>
+        
         </div>
+        
     );
 }
 
