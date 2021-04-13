@@ -1,0 +1,20 @@
+.productsContainer{
+    //border-style: dashed;
+    margin-bottom: 20px;
+    .productContainerHeaderContainer{
+        display:flex;
+        position: relative;
+        left:40%;
+        right: 40%;
+        text-decoration: underline;
+    }
+    .latestProducts{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        //justify-content: space-between;
+        grid-column-gap:10px;
+        grid-row-gap:10px;
+        padding-left: 1%;
+        padding-right: 1%;;
+    }
+}

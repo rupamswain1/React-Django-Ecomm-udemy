@@ -1,0 +1,52 @@
+.cardBox{
+    width: 95%;
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    //padding: 10px 10px;
+    //margin-left: 10px;
+    //margin-right: 10px;
+    border-radius: 10px;
+    .productImage{
+        display:block;
+        width: 90%;
+        height: 15vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        border-radius: 10px;
+        
+    }
+    .productNameContainer{
+        display:block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        .productName{
+            display: block;
+           text-align: center;
+           font-size: 15px;
+           margin-left: auto;
+            margin-right: auto;
+           width: 100%;
+        }
+        
+    }
+    .rating{
+           margin-top: 10px;
+           display: block;
+           text-align: center;
+           font-size: 15px;
+           margin-left: auto;
+           margin-right: auto;
+           width: 100%;
+    }
+    .price{
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 22px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

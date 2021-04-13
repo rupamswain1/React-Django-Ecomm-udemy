@@ -1,0 +1,37 @@
+$navOptionsColor: #FFFFFF;
+
+@mixin hoverEffect {
+    
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 2px;
+    
+}
+
+.footerContainer{
+    background-color: #15ac81;
+    width: 100%;
+    display: flex;
+    padding: 15px 15px;
+    position:relative;
+    bottom:0;
+    .footerText{
+            display: inline-block;
+            position: relative;
+            background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+            background-position: 0 100%; /*OR bottom left*/
+            background-size: 0% 1px;
+            background-repeat: no-repeat;
+            transition:
+                background-size 0.3s,
+            background-position 0s 0.3s; /*change after the size immediately*/
+           left:40%;
+           right:40%;
+            color: $navOptionsColor;
+            text-align: center;
+            padding: 0px 10px;
+            padding-bottom: 4px;
+            &:hover{
+                @include hoverEffect();
+            }
+    }
+}
