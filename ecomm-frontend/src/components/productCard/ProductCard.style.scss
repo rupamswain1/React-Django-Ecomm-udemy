@@ -1,3 +1,17 @@
+@mixin boxHover{
+   //animation: popup 0.7s;
+   transform: scale(1.1);
+   
+}
+// @keyframes popup {
+//     0%{
+//       transform: scale(1);
+//     }
+//     5%{
+//       transform: scale(1.1);
+//     }
+    
+//   }
 .cardBox{
     width: 95%;
     height: 30vw;
@@ -7,6 +21,10 @@
     //margin-right: 10px;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s ease-in;
+    &:hover{
+        @include boxHover();
+    }
     
     .productImage{
         display:block;
@@ -35,7 +53,7 @@
         }
         
     }
-    .rating{
+    .CardRating{
            margin-top: 1vw;
            display: block;
            text-align: center;

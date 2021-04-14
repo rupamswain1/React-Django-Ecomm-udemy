@@ -1,19 +1,22 @@
 .productsContainer{
     //border-style: dashed;
-    margin-bottom: 20px;
+    width: 99%;
+    height: 99%;
+    margin-bottom: 2vw;
     .productContainerHeaderContainer{
         display:flex;
         position: relative;
         left:40%;
         right: 40%;
         text-decoration: underline;
+        font-size: 1.5vw;
     }
     .latestProducts{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         //justify-content: space-between;
-        grid-column-gap:10px;
-        grid-row-gap:10px;
+        grid-column-gap:1vw;
+        grid-row-gap:2vw;
         padding-left: 1%;
         padding-right: 1%;;
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from '../rating/Rating.component'
 import './ProductCard.style.scss'
 
 const ProductCard=({product})=>{
@@ -12,8 +13,9 @@ const ProductCard=({product})=>{
             <div className='productNameContainer'>
                 <span className='productName'>{product.name}</span>
             </div>
-            <div className='rating'>
+            <div className='CardRating'>
                 {product.rating} of {product.numReviews} Reviews
+                <Rating value={product.rating} reviews={product.numReviews}/>
             </div>
             <div className='price'>
                 &#8377; {product.price} 

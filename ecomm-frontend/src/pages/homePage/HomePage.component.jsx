@@ -5,7 +5,9 @@ import './HomePage.style.scss';
 
 const HomePage=()=>{
     return(
-        <ProductsContainer/>
+        <div className="homePageContainer">
+            <ProductsContainer/>
+        </div>
     );
 }
 
