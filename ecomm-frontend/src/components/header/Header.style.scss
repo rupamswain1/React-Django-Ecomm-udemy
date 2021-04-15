@@ -8,6 +8,7 @@ $navOptionsColor: #FFFFFF;
 }
 .headerContainer{
     background-color: #15ac81;
+    width:98%;
     display:flex;
     overflow: hidden;
     padding: 0.2vw 1vw;
@@ -55,7 +56,7 @@ $navOptionsColor: #FFFFFF;
     .optionContainer{
         float:left;
         position: absolute;
-        right: 2%;
+        right: 1%;
         .option{
             display: inline-block;
             background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));

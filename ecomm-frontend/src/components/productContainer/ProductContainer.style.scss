@@ -4,20 +4,29 @@
     height: 99%;
     margin-bottom: 2vw;
     .productContainerHeaderContainer{
-        display:flex;
+        display:inherit;
         position: relative;
-        left:40%;
+       width:50%;
+       left:42%;
         right: 40%;
-        text-decoration: underline;
+       text-decoration: underline;
         font-size: 1.5vw;
+        overflow: hidden;
+       margin: 0%;
+        .productContainerHeader{
+            text-align:center;
+            position: relative;
+            left:0%;
+            //right: 40%;
+        }
     }
     .latestProducts{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        //justify-content: space-between;
-        grid-column-gap:1vw;
+        justify-content: space-between;
+        grid-column-gap:0.1vw;
         grid-row-gap:2vw;
-        padding-left: 1%;
-        padding-right: 1%;;
+        padding-left: 1.5%;
+        //padding-right: 0.5%;
     }
 }

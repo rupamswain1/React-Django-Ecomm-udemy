@@ -24,6 +24,7 @@ const Rating=({value,reviews})=>{
 
               ))
           }
+          &nbsp;of {reviews} Reviews
 
     </div>
 

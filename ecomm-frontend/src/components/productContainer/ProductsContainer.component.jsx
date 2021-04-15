@@ -8,7 +8,7 @@ const ProductsContainer=()=>{
         
         <div className='productsContainer'>
             <div className="productContainerHeaderContainer">
-                <h1 className='productContainerHeader'>Latest Product</h1>
+                <h1 className=''>Latest Product</h1>
             </div>
             <div className="latestProducts">
                 {products.map((product)=>{
