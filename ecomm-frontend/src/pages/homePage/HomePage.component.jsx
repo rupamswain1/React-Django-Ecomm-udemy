@@ -6,7 +6,7 @@ import './HomePage.style.scss';
 const HomePage=()=>{
     return(
         <div className="homePageContainer">
-            <ProductsContainer/>
+            <ProductsContainer key={'homepage'}/>
         </div>
     );
 }

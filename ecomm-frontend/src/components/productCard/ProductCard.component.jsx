@@ -16,7 +16,7 @@ const ProductCard=({product})=>{
                     <span className='productName'>{product.name}</span>
                 </div>
                 <div className='CardRating'>
-                    <Rating value={product.rating} reviews={product.numReviews}/>
+                    <Rating key={product._id} value={product.rating} reviews={product.numReviews}/>
                 </div>
                 <div className='price'>
                     &#8377; {product.price} 

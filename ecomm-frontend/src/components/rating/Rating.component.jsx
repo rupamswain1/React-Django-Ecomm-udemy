@@ -15,7 +15,7 @@ const Rating=({value,reviews})=>{
             
         )
     }
-    console.log(stars)
+    //console.log(stars)
     return(
     <div className='ratingContainer'>
           {

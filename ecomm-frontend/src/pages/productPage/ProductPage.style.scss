@@ -1,0 +1,83 @@
+.productPageMainContainer{
+    position: relative;
+    width: 90%;
+    border-style: dashed;
+    left:5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    
+    .productPageImageContainer{
+        width:35%;
+        height:35%;
+        
+        .productImage{
+           position: relative;
+           width: 100%;
+           height: 100%;
+           border-radius: 10px;
+        }
+    }
+    .productDetailscontainer{
+        //border-style: dashed;
+        width: 25%;
+        height: 35%;
+        position: relative;
+        margin-left:1.5%;
+        display: block;
+       // border-bottom: 1px solid;
+        .productName{
+            //border-style: dotted;
+            left:1%;
+            right: 1%;
+            width:95%;
+            height:25%;
+            position:relative;
+            font-size: 150%;
+            text-align: center;
+            padding-bottom: 2%;
+            border-bottom: 1px solid;
+        }
+        
+        .productPageRating{
+            .ratingContainer{
+                width: 95%;
+                height:30%;
+                padding-bottom: 2%;
+                border-bottom: 1px solid;
+                text-align: center;
+                padding-top: 2%;
+                position: relative;
+                left: 1%;
+            }
+            //position: relative;
+            //width:94%;
+            //height:25%;
+            
+            left:1%;
+            right:0%;                
+        }
+        .productPrice{
+            text-align: center;
+            font-size: 150%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-bottom: 1px solid;
+            width: 95%;
+            position: relative;
+            left: 1%;
+        }
+        .productDescription{
+            text-align: left;
+            font-size: 120%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+           // border-bottom: 1px solid;
+            width: 95%;
+            position: relative;
+            left: 1%;
+        }
+
+
+    }
+}
