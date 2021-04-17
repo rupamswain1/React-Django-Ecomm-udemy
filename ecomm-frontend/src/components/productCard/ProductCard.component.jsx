@@ -8,7 +8,7 @@ const ProductCard=({product})=>{
     
     return(
         <div className='cardBox'>
-            <Link to={`/product/${product._id}`}>        
+            <Link key={`${product._id}link`} to={`/product/${product._id}`}>        
                 <div className='cardImage'>
                     <img src={`${product.image}`} className="productImage" alt={`${product.name} Image`}/>            
                 </div>
@@ -16,7 +16,7 @@ const ProductCard=({product})=>{
                     <span className='productName'>{product.name}</span>
                 </div>
                 <div className='CardRating'>
-                    <Rating key={product._id} value={product.rating} reviews={product.numReviews}/>
+                    <Rating key={`${product._id}cardRating`} value={product.rating} reviews={product.numReviews}/>
                 </div>
                 <div className='price'>
                     &#8377; {product.price} 

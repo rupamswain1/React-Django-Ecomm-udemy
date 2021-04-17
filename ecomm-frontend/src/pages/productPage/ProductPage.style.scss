@@ -1,7 +1,36 @@
+ 
+@mixin quantityButton {
+    background-color: rgb(92, 203, 247);
+    border:2px solid rgb(17, 136, 184);
+    border-radius: 15%;
+    width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(126, 221, 245), inset -1px -10px 5px rgb(24, 171, 216);
+    &:active{
+        @include quantityButtonHover();
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@mixin quantityButtonHover{
+    background-color: rgb(46, 170, 219);
+    border:2px solid rgb(92, 203, 247);
+    border-radius: 15%;
+    width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(24, 171, 216), inset -1px -10px 5px rgb(126, 221, 245);
+    
+}
 .productPageMainContainer{
     position: relative;
     width: 90%;
-    border-style: dashed;
+   // border-style: dashed;
     left:5%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -79,5 +108,90 @@
         }
 
 
+    }
+    .productQuantityAndAddToCartContainer{
+        width: 25%;
+        height: 35%;
+        position: relative;
+        margin-left:1.5%;
+        display: block;
+        //border:1px solid;
+        .productQuantity{
+            position: relative;
+            left:10%;
+            display: flex;
+            width:70%;
+            border:1px solid;
+            text-align: center;
+            padding: 4%;
+            //border-radius: 5px;
+            .quantityContainer{
+                text-decoration: underline;
+                padding: 2%;
+                text-align: center;
+            }
+            .removeQuantityButton{
+               @include quantityButton();
+            }
+            .addProductQuantity{
+              
+                width:15%;
+                padding: 2%;
+                font-size: 150%;
+            }
+            .addQuantityButton{
+               @include quantityButton();
+            }
+
+        }
+        .quntityPriceContainer{
+            position: relative;
+            left:10%;
+            display: flex;
+            width:70%;
+            border:1px solid;
+            text-align: center;
+            padding: 4%;
+            display: flex;
+            //border-radius: 5px;
+            .totalPriceContainer{
+                text-decoration: underline;
+                //padding: 1%;
+                padding-top: 3%;
+                text-align: center;
+            }
+            .productPrice{
+                
+                padding: 2%;
+                text-align: center;
+                font-size: 130%;
+            }
+        }
+        .addToCartButtuon{
+            position: relative;
+            left:10%;
+            display: flex;
+            width:78.5%;
+            border:1px solid;
+            text-align: center;
+           // padding: 4%;
+            display: flex;
+            border-radius: 5px;
+            margin-top:5%;
+        }
+    }
+    .lowStockContainer{
+        position: relative;
+        left:10%;
+        display: flex;
+        width:70%;
+        //border:1px solid;
+        text-align: center;
+        padding: 4%;
+        display: flex;
+        .lowStockMsg{
+            color:red;
+            text-align: center;
+        }
     }
 }

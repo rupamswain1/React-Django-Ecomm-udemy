@@ -1,0 +1,48 @@
+@mixin buttonClick{
+    background-color: rgb(66, 212, 156);
+    box-shadow: inset 1px 6px 12px rgb(144, 243, 205), inset -1px -10px 5px rgb(144, 243, 205);
+    text-decoration: underline;
+}
+@mixin buttonClickdisable{
+    background-color: rgb(132, 136, 135);
+    border:2px solid rgb(75, 77, 76);
+    box-shadow: inset 1px 6px 12px rgb(174, 175, 175), inset -1px -10px 5px rgb(105, 105, 105);
+    text-decoration: none;
+}
+button[class*="customButton"]{
+   // position: relative;
+    width:100%;
+    height:100%;
+    background-color: rgb(144, 243, 205);
+    border:2px solid rgb(66, 241, 145);
+    //border-radius: 10%;
+    //width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(10, 216, 137), inset -1px -10px 5px rgb(10, 216, 137);
+    color: rgb(51, 49, 45);
+    &:active{
+        @include buttonClick();
+        
+    }
+}
+button[class*="disable"]{
+    // position: relative;
+     //width:100%;
+     //height:100%;
+     background-color: rgb(132, 136, 135);
+     border:2px solid rgb(75, 77, 76);
+     //border-radius: 10%;
+     //width:15%;
+     //padding: 0.5%;
+     //font-size: 150%;
+     //text-align: center;
+     box-shadow: inset 1px 6px 12px rgb(174, 175, 175), inset -1px -10px 5px rgb(105, 105, 105);
+     color: rgb(255, 255, 255);
+     &:active{
+       @include buttonClickdisable();
+        
+    }
+     
+ }
