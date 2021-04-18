@@ -1,10 +1,22 @@
-import React from 'react';
-import products from '../../productData/products';
+import React,{useState,useEffect} from 'react';
+//import products from '../../productData/products';
 import Rating from '../../components/rating/Rating.component'
 import Button from '../../components/button/Button.component';
+import axios from 'axios';
 import './ProductPage.style.scss';
 const ProductPage=({match})=>{
-    const prod=products.find((product)=>(product._id===match.params.prodId));
+    const [product,setProduct]=useState([]);
+    useEffect(()=>{
+        const fetchProduct=async ()=>{
+            const {data}= await axios.get(`/api/products/${match.params.prodId}/`);
+            setProduct(data);
+        }
+        fetchProduct();
+
+    },[]);
+
+
+    const prod=product;
     const enable=prod.countInStock>0?true:false;
     const lowStock=prod.countInStock>3?true:false;
     //console.table(prod);

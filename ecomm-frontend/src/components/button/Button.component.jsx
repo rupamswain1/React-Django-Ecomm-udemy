@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.style.scss'
 const Button=({text,cls,displayType,enabled,onClickMethod})=>{
     const enableButton=(enabled==true)?null:"disable";
-    console.log(enableButton)
+    //console.log(enableButton)
     return(
         <button 
             disabled={enableButton}

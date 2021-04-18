@@ -71,3 +71,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Installed packages for Frontend:
 1. Sass
+2. react-router-dom
+3. axios
