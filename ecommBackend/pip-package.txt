@@ -1,7 +1,6 @@
 1. djangorestframework
 2. django-cors-headers
-
-
+3. pillow
 Super user:
 userName: djangoUser
 email: djangouser@python.com
