@@ -1,19 +1,20 @@
 import React,{useState,useEffect} from 'react';
 //import products from '../../productData/products';
-import ProductCard from '../../components/productCard/ProductCard.component'
-
+import ProductCard from '../../components/productCard/ProductCard.component';
+import {connect} from 'react-redux';
 import axios from 'axios';
 import './ProductContainer.style.scss'
-const ProductsContainer=()=>{
-   // console.log(products);
+import {fetchLatestProducts} from '../../redux/productList/productList.action'
+const ProductsContainer=(products1)=>{
+   console.log(products1);
    const [products,setProducts]=useState([]);
    useEffect(()=>{
         const fetchProducts=async ()=>{ 
             //console.log('func')
-           const {data}=await axios.get('/api/products/');
+         //  const {data}=await axios.get('/api/products/');
            
            //console.log(data)
-           setProducts(data);
+           setProducts(products1);
         };
         fetchProducts();
    },[])
@@ -36,4 +37,8 @@ const ProductsContainer=()=>{
     )
     
 }
-export default ProductsContainer; 
+const mapDispatchToProps=dispatch=>({
+    products1:()=>dispatch(fetchLatestProducts())
+})
+
+export default connect(null,mapDispatchToProps)(ProductsContainer); 

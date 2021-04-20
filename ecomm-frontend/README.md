@@ -73,3 +73,4 @@ Installed packages for Frontend:
 1. Sass
 2. react-router-dom
 3. axios
+4. redux redux-logger react-redux

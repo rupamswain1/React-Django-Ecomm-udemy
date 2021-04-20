@@ -1,0 +1,3 @@
+export const productListType={
+    FETCH_ALL_LATEST_PRODUCTS:"FETCH_ALL_LATEST_PRODUCTS",
+}
