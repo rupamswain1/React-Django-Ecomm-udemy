@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchLatestProductFromDb=async()=>{
+export const fetchLatestProductFromBackend=async()=>{
     const {data}=await axios.get('/api/products/')
-    console.log(data)
+    //console.log(data)
     return(data);
 }

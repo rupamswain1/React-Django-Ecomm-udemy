@@ -6,9 +6,11 @@ import createSagaMiddleware from 'redux-saga';
 
 import {rootReducer} from './root-reducer';
 
+import {fetchProductListStart} from './productList/productList.sagas';
+
 const sagaMiddleware=createSagaMiddleware();
-const middleware=[logger];
+const middleware=[sagaMiddleware,logger];
 
 const store=createStore(rootReducer,applyMiddleware(...middleware))
-
+sagaMiddleware.run(fetchProductListStart)
 export default store;
