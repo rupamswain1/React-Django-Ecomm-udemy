@@ -10,8 +10,9 @@ export function* fetchProductListAsync(){
         yield put(fetchLatestProductsSuccess(data))
     }
     catch(error){
-        yield put(fetchLatestProductsFail(error));
-        console.log(error);
+      // console.log(error.response.status)
+        yield put(fetchLatestProductsFail(error.response.status +' '+ error.response.statusText));
+        //console.log(error);
     }
 
 }

@@ -4,8 +4,8 @@ import products from '../../productData/products'
 //import {fetchLatestProductFromDb} from '../../backendLogic/fetchProductList'
 const INITIAL_STATE={
     latestProducts:[],
-    isLoading:false,
-    error:null,
+    isLoading:true,
+    error:"",
 }
 
 export const productListReducer=(state=INITIAL_STATE,action)=>{
@@ -14,6 +14,7 @@ export const productListReducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 latestProducts:action.payload,
+                isLoading:false,
             }
           case productListType.FETCH_ALL_LATEST_PRODUCTS_START:
             return{
@@ -25,7 +26,7 @@ export const productListReducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 isLoading:false,
-                error:action,
+                error:action.payload,
                 
             }
           default:

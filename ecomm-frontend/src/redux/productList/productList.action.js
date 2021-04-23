@@ -12,7 +12,8 @@ export const fetchLatestProductsSuccess=(products)=>{
     payload:products,
 })}
 
-export const fetchLatestProductsFail=(error)=>({
+export const fetchLatestProductsFail=(error)=>{
+    return({
     type:productListType.FETCH_ALL_LATEST_PRODUCTS_FAIL,
-    payload:error.message,
-}) 
+    payload:error,
+}) }
