@@ -1,7 +1,6 @@
-//import { Switch } from 'react-router';
+
 import {productListType} from './productList.type';
-import products from '../../productData/products'
-//import {fetchLatestProductFromDb} from '../../backendLogic/fetchProductList'
+
 const INITIAL_STATE={
     latestProducts:[],
     isLoading:true,

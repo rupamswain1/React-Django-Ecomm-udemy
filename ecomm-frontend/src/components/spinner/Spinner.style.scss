@@ -1,0 +1,26 @@
+.spinnerContainer{
+    //border-style: dashed;
+    //border: solid 1px;
+    position: absolute;
+    left:38%;
+    right:45%;
+    height: 45%;
+    width:30%;
+    .loader{
+        border:2vw solid #f3f3f3;
+        //border-style: dashed;
+        border-top:2vw solid #3498db;
+        border-radius: 50%;
+        width:7vw;
+        height:7vw;
+        animation: spin 2s linear infinite;
+        position: relative;
+        top: 20%;
+        left: 30%;
+        right:20%
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+}

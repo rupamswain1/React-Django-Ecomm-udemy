@@ -1,26 +1,32 @@
-import React,{useState,useEffect} from 'react';
+import React,{useEffect} from 'react';
 //import products from '../../productData/products';
 import Rating from '../../components/rating/Rating.component'
 import Button from '../../components/button/Button.component';
-import axios from 'axios';
+import {productDetailFetchStart} from '../../redux/productDetail/productDetail.action';
+import {useDispatch, useSelector} from 'react-redux';
+
+import Spinner from '../../components/spinner/Spinner.component';
+import ErrorPage from '../../components/errorPage/ErrorPage.component';
 import './ProductPage.style.scss';
 const ProductPage=({match})=>{
-    const [product,setProduct]=useState([]);
+
+    const dispatch=useDispatch();
+    const {isLoading,error,productDetails}=useSelector(state=>state.productDetailReducer);
+   
     useEffect(()=>{
-        const fetchProduct=async ()=>{
-            const {data}= await axios.get(`/api/products/${match.params.prodId}/`);
-            setProduct(data);
-        }
-        fetchProduct();
+        dispatch(productDetailFetchStart(`${match.params.prodId}`));
 
-    },[]);
-
-
-    const prod=product;
+    },[dispatch]);
+    //console.log(productDetails);
+    
+    const prod=productDetails;
     const enable=prod.countInStock>0?true:false;
     const lowStock=prod.countInStock>3?true:false;
     //console.table(prod);
     return(
+        isLoading?<Spinner key={`spinner-${prod._id}`}/>
+            :error?<ErrorPage message={error} key={`error-${prod._id}`}/>
+            :
         <div className='productPageMainContainer'>
             <div className="productPageImageContainer">
                 <img key={prod.name} className="productImage" src={`${prod.image}`}  alt={`${prod.name} image`}/>
@@ -86,6 +92,7 @@ const ProductPage=({match})=>{
             </div>
             
         </div>
+        
     );
 }
 
