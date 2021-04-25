@@ -2,17 +2,20 @@ import React,{useEffect} from 'react';
 //import products from '../../productData/products';
 import Rating from '../../components/rating/Rating.component'
 import Button from '../../components/button/Button.component';
+import SelectQuantity from '../../components/selectQuantity/SelectQuantity.component';
 import {productDetailFetchStart} from '../../redux/productDetail/productDetail.action';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Spinner from '../../components/spinner/Spinner.component';
 import ErrorPage from '../../components/errorPage/ErrorPage.component';
 import './ProductPage.style.scss';
+
 const ProductPage=({match})=>{
 
     const dispatch=useDispatch();
     const {isLoading,error,productDetails}=useSelector(state=>state.productDetailReducer);
-   
+    const quantity= useSelector(state=>state.ProductQuantityReducer.productQuantity[productDetails._id]);
+    
     useEffect(()=>{
         dispatch(productDetailFetchStart(`${match.params.prodId}`));
 
@@ -21,7 +24,7 @@ const ProductPage=({match})=>{
     
     const prod=productDetails;
     const enable=prod.countInStock>0?true:false;
-    const lowStock=prod.countInStock>3?true:false;
+    const lowStock=(prod.countInStock-quantity)>3?true:false;
     //console.table(prod);
     return(
         isLoading?<Spinner key={`spinner-${prod._id}`}/>
@@ -47,21 +50,7 @@ const ProductPage=({match})=>{
             </div>
             <div className="productQuantityAndAddToCartContainer">
                  
-                <div className="productQuantity">
-                        <div className="quantityContainer">
-                            Quantity:
-                        </div>
-                        <div className="removeQuantityButton">
-                            -
-                        </div>
-                        <div className="addProductQuantity">
-                            30
-                        </div>
-                        <div className="addQuantityButton">
-                            +
-                        </div>        
-
-                </div>
+               <SelectQuantity key={`quantitySelector${prod._id}`}/>
                 <div className="quntityPriceContainer">
                     <div className="totalPriceContainer">
                         Total Price:&nbsp; 
@@ -81,7 +70,7 @@ const ProductPage=({match})=>{
                     lowStock?null:
                         enable? 
                             <div className="lowStockMsg">
-                                *Only {prod.countInStock} items left in stock
+                                *Only {prod.countInStock-quantity} items left in stock
                             </div> 
                         :
                          <div className="lowStockMsg">

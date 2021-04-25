@@ -5,7 +5,7 @@ const INITIAL_STATE={
     isLoading:false,
     error:"",
     productDetails:{},
-    productQuantity:1
+    
 }
 
 export const ProductDetailReducer=(state=INITIAL_STATE,action)=>{

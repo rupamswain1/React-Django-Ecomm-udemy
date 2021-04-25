@@ -1,0 +1,71 @@
+ 
+@mixin quantityButton {
+    background-color: rgb(92, 203, 247);
+    border:2px solid rgb(17, 136, 184);
+    border-radius: 15%;
+    width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(126, 221, 245), inset -1px -10px 5px rgb(24, 171, 216);
+    &:active{
+        @include quantityButtonHover();
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@mixin quantityButtonDisable{
+    background-color: rgb(143, 143, 143);
+    border:2px solid rgb(62, 63, 63);
+    border-radius: 15%;
+    width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(96, 97, 97), inset -1px -10px 5px rgb(64, 64, 65);
+}
+
+@mixin quantityButtonHover{
+    background-color: rgb(46, 170, 219);
+    border:2px solid rgb(92, 203, 247);
+    border-radius: 15%;
+    width:15%;
+    padding: 0.5%;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: inset 1px 6px 12px rgb(24, 171, 216), inset -1px -10px 5px rgb(126, 221, 245);
+    
+}
+.productQuantity{
+    position: relative;
+    left:10%;
+    display: flex;
+    width:70%;
+    border:1px solid;
+    text-align: center;
+    padding: 4%;
+    //border-radius: 5px;
+    .quantityContainer{
+        text-decoration: underline;
+        padding: 2%;
+        text-align: center;
+    }
+    .removeQuantityButton-enable{
+        @include quantityButton();
+    }
+    div[class*='disable']{
+        @include quantityButtonDisable();
+    }
+    .addProductQuantity{
+    
+        width:15%;
+        padding: 2%;
+        font-size: 150%;
+    }
+    .addQuantityButton-enable{
+    @include quantityButton();
+    }
+
+}
