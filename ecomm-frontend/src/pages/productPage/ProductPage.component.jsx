@@ -5,6 +5,7 @@ import Button from '../../components/button/Button.component';
 import SelectQuantity from '../../components/selectQuantity/SelectQuantity.component';
 import {productDetailFetchStart} from '../../redux/productDetail/productDetail.action';
 import {useDispatch, useSelector} from 'react-redux';
+import{addItemToCartStart} from '../../redux/cart/cart.action';
 
 import Spinner from '../../components/spinner/Spinner.component';
 import ErrorPage from '../../components/errorPage/ErrorPage.component';
@@ -56,13 +57,13 @@ const ProductPage=({match})=>{
                         Total Price:&nbsp; 
                     </div>
                     <div className="productPrice">
-                        &#8377;100000.00
+                        &#8377;{(prod.price*quantity).toFixed(2)}
                     </div>
                    
                 </div>
                 <div className="addToCartButtuon">
                     {   
-                        <Button key={`${prod.name}button`} cls="addToCartBtn" text="Add To Cart" displayType="primary" enabled={enable}/>
+                        <Button key={`${prod.name}button`} cls="addToCartBtn" text="Add To Cart" displayType="primary" onClickMethod={()=>dispatch(addItemToCartStart(prod._id,quantity))} enabled={enable}/>
                     }
                 </div>
                 <div className="lowStockContainer">

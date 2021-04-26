@@ -1,6 +1,8 @@
-export const CartTypes={
+const CartTypes={
     ADD_PRODUCT_TO_CART_START:"ADD_PRODUCT_TO_CART_START",
     ADD_PRODUCT_TO_CART_SUCCESS:"ADD_PRODUCT_TO_CART_SUCCESS",
     ADD_PRODUCT_TO_CART_FAIL:"ADD_PRODUCT_TO_CART_FAIL",
 }
+
+export default CartTypes;
 

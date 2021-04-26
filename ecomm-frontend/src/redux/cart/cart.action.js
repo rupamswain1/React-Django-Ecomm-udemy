@@ -1,4 +1,4 @@
-import {CartTypes} from './cart.types';
+import CartTypes from './cart.types';
 
 
 export const addItemToCartStart=(prodId,quantity)=>(
@@ -10,9 +10,9 @@ export const addItemToCartStart=(prodId,quantity)=>(
     }
 )
 
-export const addItemToCartSuccess=({_id,name,image,price,countInStock,quantity})=>({
+export const addItemToCartSuccess=(_id,name,image,price,countInStock,quantity)=>({
     type:CartTypes.ADD_PRODUCT_TO_CART_SUCCESS,
-    id:_id,
+    _id:_id,
     name:name,
     image:image,
     price:price,

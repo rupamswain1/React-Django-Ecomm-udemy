@@ -13,15 +13,16 @@ export const cartReducer = (state=INITIAL_STATE,action)=>{
                 isCartUpdating:true,
             }
         case CartTypes.ADD_PRODUCT_TO_CART_SUCCESS:
-            if(state.cartItems.action._id!=undefined){
-                state.cartItems.action._id.quantity=parseInt(state.cartItems.action._id.quantity)+action.quantity;
+            console.log(action)
+            if(state.cartItems[action._id]!=undefined){
+                state.cartItems[action._id].quantity=parseInt(state.cartItems[action._id].quantity)+action.quantity;
             }
             else{
                 state.cartItems[action._id]={
                     name:action.name,
                     image:action.image,
                     price:action.price,
-                    countInStock:action.countInStock,
+                    countInStock:action.countInstock,
                     quantity:action.quantity
                 }
             }
@@ -36,5 +37,7 @@ export const cartReducer = (state=INITIAL_STATE,action)=>{
                 isCartUpdating:false,
                 error:action.payload,
             }
+        default:
+            return state;
     }
 }

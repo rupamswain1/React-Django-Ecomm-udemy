@@ -6,7 +6,9 @@ const Button=({text,cls,displayType,enabled,onClickMethod})=>{
     return(
         <button 
             disabled={enableButton}
-            className={`customButton-${displayType}-${cls}-${enableButton}`} >
+            className={`customButton-${displayType}-${cls}-${enableButton}`} 
+            onClick={onClickMethod}
+            >
             {text}
         </button>
 
