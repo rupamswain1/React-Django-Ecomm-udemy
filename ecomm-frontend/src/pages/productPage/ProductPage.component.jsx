@@ -18,6 +18,7 @@ const ProductPage=({match})=>{
     const quantity= useSelector(state=>state.ProductQuantityReducer.productQuantity[productDetails._id]);
     
     useEffect(()=>{
+        
         dispatch(productDetailFetchStart(`${match.params.prodId}`));
 
     },[dispatch]);

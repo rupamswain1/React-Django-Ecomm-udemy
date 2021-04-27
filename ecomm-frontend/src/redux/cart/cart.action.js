@@ -16,7 +16,7 @@ export const addItemToCartSuccess=(_id,name,image,price,countInStock,quantity)=>
     name:name,
     image:image,
     price:price,
-    countInstock:countInStock,
+    countInStock:countInStock,
     quantity:quantity
 })
 
