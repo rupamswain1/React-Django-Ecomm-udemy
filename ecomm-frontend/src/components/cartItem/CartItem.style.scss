@@ -1,0 +1,35 @@
+.cartItemContainer{
+    position: relative;
+    left: 1%;
+    width:100%;
+    height:20%;
+    display:flex;
+    .imageContainer{
+        position: relative;
+        max-width:15%;
+        border-style: dashed;
+        img{
+            max-width:100%;
+        }
+    }
+    .productNameContainer{
+        position: relative;
+        width:15%;
+        border-style: dashed;
+    }
+    .priceContainer{
+        position: relative;
+        width:10%;
+        border-style: dashed;
+    }
+    .quantityContainer{
+        position: relative;
+        width:10%;
+        border-style: dashed;
+    }
+    .removeContainer{
+        position: relative;
+        width:10%;
+        border-style: dashed;
+    }
+}
