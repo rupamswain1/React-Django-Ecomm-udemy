@@ -3,6 +3,12 @@
     box-shadow: inset 1px 6px 12px rgb(144, 243, 205), inset -1px -10px 5px rgb(144, 243, 205);
     text-decoration: underline;
 }
+
+@mixin buttonClickSecondary{
+    background-color: rgb(247, 229, 73);
+    box-shadow: inset 1px 6px 12px rgb(209, 196, 18), inset -1px -10px 5px rgb(241, 210, 31);
+    text-decoration: underline;
+}
 @mixin buttonClickdisable{
     background-color: rgb(132, 136, 135);
     border:2px solid rgb(75, 77, 76);
@@ -44,5 +50,24 @@ button[class*="disable"]{
        @include buttonClickdisable();
         
     }
+}
+    button[class*="secondary"]{
+        // position: relative;
+         width:100%;
+         height:100%;
+         background-color: rgb(220, 241, 101);
+         border:2px solid rgb(238, 223, 19);
+         //border-radius: 10%;
+         //width:15%;
+         padding: 0.5%;
+         font-size: 150%;
+         text-align: center;
+         box-shadow: inset 1px 6px 12px rgb(224, 161, 43), inset -1px -10px 5px rgb(209, 196, 18);
+         color: rgb(51, 49, 45);
+         &:active{
+             @include buttonClickSecondary();
+             
+         }
+     }
      
- }
+ 

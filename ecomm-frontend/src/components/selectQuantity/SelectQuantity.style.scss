@@ -52,20 +52,26 @@
         padding: 2%;
         text-align: center;
     }
-    .removeQuantityButton-enable{
+    .quantityButtonContainer{
+        display: flex;
+        position: relative;
+        width:100%;
+        .removeQuantityButton-enable{
+            @include quantityButton();
+        }
+        div[class*='disable']{
+            @include quantityButtonDisable();
+        }
+        .addProductQuantity{
+        
+            width:15%;
+            padding: 2%;
+            font-size: 150%;
+        }
+        .addQuantityButton-enable{
         @include quantityButton();
+        }
     }
-    div[class*='disable']{
-        @include quantityButtonDisable();
-    }
-    .addProductQuantity{
-    
-        width:15%;
-        padding: 2%;
-        font-size: 150%;
-    }
-    .addQuantityButton-enable{
-    @include quantityButton();
-    }
+
 
 }

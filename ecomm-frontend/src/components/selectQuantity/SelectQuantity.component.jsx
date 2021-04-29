@@ -3,9 +3,16 @@ import {useDispatch,useSelector} from 'react-redux';
 import {addLocalProductQuantity,removeLocalProductQuantity} from '../../redux/productQuantity/productQuantity,action'
 import './SelectQuantity.style.scss';
 
-const SelectQuantity=()=>{
+const SelectQuantity=({prodDetails})=>{
     const dispatch = useDispatch();
-    const {isLoading,error,productDetails}=useSelector(state=>state.productDetailReducer);
+    let productDetails=useSelector(state=>state.productDetailReducer.productDetails);
+    //console.log(productDetails._id);
+    let {isLoading,error}=useSelector(state=>state.productDetailReducer);
+    if(prodDetails!=undefined){
+        //console.log('called')
+        productDetails=prodDetails;  
+    }
+    
     const quantityList= useSelector(state=>state.ProductQuantityReducer.productQuantity);
     const quantity=quantityList[productDetails._id];
     useEffect(()=>{
@@ -28,20 +35,21 @@ const SelectQuantity=()=>{
             <div className="quantityContainer">
                 Quantity:
             </div>
-            <div className={`removeQuantityButton-${quantity<=1?'disable':'enable'}`}
-                onClick={removeQuantity}
-            >
-                -
+            <div className='quantityButtonContainer'>
+                <div className={`removeQuantityButton-${quantity<=1?'disable':'enable'}`}
+                    onClick={removeQuantity}
+                >
+                    -
+                </div>
+                <div className="addProductQuantity">
+                    {quantity}
+                </div>
+                <div className={`addQuantityButton-${quantity>=productDetails.countInStock?'disable':'enable'}`}
+                    onClick={addQuantity}
+                >
+                    +
+                </div>        
             </div>
-            <div className="addProductQuantity">
-                {quantity}
-            </div>
-            <div className={`addQuantityButton-${quantity>=productDetails.countInStock?'disable':'enable'}`}
-                onClick={addQuantity}
-            >
-                +
-            </div>        
-
         </div>
 
     )

@@ -4,32 +4,70 @@
     width:100%;
     height:20%;
     display:flex;
-    .imageContainer{
+    top:2%;
+    .internalContainer{
+        display: flex;
         position: relative;
-        max-width:15%;
-        border-style: dashed;
-        img{
-            max-width:100%;
+        left:10%;
+        .imageContainer{
+            position: relative;
+            max-width:15%;
+            
+            img{
+                max-width:100%;
+                border-radius: 10px;
+                box-shadow:gray;
+            }
         }
-    }
-    .productNameContainer{
-        position: relative;
-        width:15%;
-        border-style: dashed;
-    }
-    .priceContainer{
-        position: relative;
-        width:10%;
-        border-style: dashed;
-    }
-    .quantityContainer{
-        position: relative;
-        width:10%;
-        border-style: dashed;
-    }
-    .removeContainer{
-        position: relative;
-        width:10%;
-        border-style: dashed;
+        .productNameContainer{
+            position: relative;
+            width:15%;
+            padding-left: 3%;
+            padding-right: 2%;
+            .productName{
+                position:relative;
+                text-align: center;
+                top:20%;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                
+            }
+        }
+        .priceContainer{
+            position: relative;
+            width:10%;
+            .productPrice{
+                    position:relative;
+                    text-align: center;
+                    top:40%;
+            }
+        }
+        .quantityContainer{
+            position: relative;
+            width:20%;
+            //border-style: dashed;
+            padding: -30%;
+            .productQuantity{
+                display: block;
+                border-style: none;
+                top:10%;
+                ;
+            }
+        
+        }
+        .removeContainer{
+            position: relative;
+            width:13%;
+            //border-style: dashed;
+            .removeButton{
+                position: relative;
+                top:40%;
+                button[class*="customButton"]{
+                    font-size: 120%;
+                }
+            }
+        }
     }
 }
