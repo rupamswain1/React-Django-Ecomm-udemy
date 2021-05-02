@@ -32,6 +32,9 @@ button[class*="customButton"]{
         @include buttonClick();
         
     }
+    &:hover{
+        cursor: pointer;
+    }
 }
 button[class*="disable"]{
     // position: relative;

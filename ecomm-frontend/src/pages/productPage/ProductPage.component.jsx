@@ -5,6 +5,7 @@ import Button from '../../components/button/Button.component';
 import SelectQuantity from '../../components/selectQuantity/SelectQuantity.component';
 import {productDetailFetchStart} from '../../redux/productDetail/productDetail.action';
 import {useDispatch, useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 import{addItemToCartStart} from '../../redux/cart/cart.action';
 
 import Spinner from '../../components/spinner/Spinner.component';
@@ -64,7 +65,9 @@ const ProductPage=({match})=>{
                 </div>
                 <div className="addToCartButtuon">
                     {   
+                        <Link className="addToCartButtonLink" to='/cart/'>
                         <Button key={`${prod.name}button`} cls="addToCartBtn" text="Add To Cart" displayType="primary" onClickMethod={()=>dispatch(addItemToCartStart(prod._id,quantity))} enabled={enable}/>
+                        </Link>
                     }
                 </div>
                 <div className="lowStockContainer">
