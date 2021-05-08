@@ -3,6 +3,6 @@
 3. pillow
 4.djangorestframework-simplejwt
 Super user:
-userName: djangoUser
+userName: djangoUser, djangouser@python.com
 email: djangouser@python.com
 pwd: django123
