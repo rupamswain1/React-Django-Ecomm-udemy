@@ -1,0 +1,36 @@
+
+
+    .loginModalContainer{
+        display:block;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding:2%;
+        border:1px solid #888;
+        border-radius: 10px;
+        width:35%;
+        .loginModalCloseContainer{
+            display: block;
+            position: relative;
+            top: -4vh;
+            left:1vw;
+            //position:relative;
+            color:#aaa;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+            &:hover{
+                color: black;
+                cursor: pointer;
+            }
+        }
+        .loginFieldsContainer{
+            position: relative;
+            margin-top: 30px;
+            display: block;
+            left:23%;
+            Button{
+                position:relative;
+                width: 60.5%;
+            }
+        }
+    }

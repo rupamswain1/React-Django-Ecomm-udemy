@@ -1,8 +1,15 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './Header.style.scss';
+import {toggleLoginModalDisplay} from '../../redux/login/login.action';
 
 const Header=()=>{
+    const dispatch = useDispatch();
+
+    const toggleLoginModalDisplayLocal=()=>{
+        dispatch(toggleLoginModalDisplay())
+    }
     return(
         <nav className='headerContainer'>
             <Link key='appLogo' to='/'>
@@ -24,7 +31,7 @@ const Header=()=>{
                         Cart
                     </div>
                 </Link>
-                <div className='option'>
+                <div className='option' onClick={()=>toggleLoginModalDisplayLocal()}>
                     SignIn
                 </div>
             </div>

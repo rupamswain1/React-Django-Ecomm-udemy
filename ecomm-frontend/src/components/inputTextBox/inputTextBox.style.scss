@@ -1,0 +1,48 @@
+@mixin shrinkLable {
+    top:-2vh;
+    font-size: 100%;
+    background-color: white;
+    padding: 0.3%;
+}
+
+div[class^="inputtextBoxContainer"]{
+    position: relative;
+    //border-style: solid;
+    //width: 100%;
+   // height: 100%;
+   label[class^='inputtextBoxLabel']{
+        
+    position: absolute;
+    left: 1%;
+    top:2.3vh;
+    //padding: 0.55rem;
+    color:rgb(8, 150, 95);
+    font-size: 150%;
+    transition: 0.3s ease all;
+    
+   
+    }
+    label[class*='shrink']{
+        @include shrinkLable();
+    }
+    input[class^='inputtextBoxInput']{
+        display: block;
+        width:20vw;
+        line-height:5vh;
+        border-radius: 6px;
+        border-color:rgb(8, 150, 95);
+        //border:100px;
+        z-index: 1;
+        outline: none;
+        padding: 10px 10px 10px 5px;
+        font-size: 150%;
+        margin-bottom: 3%;
+        &:focus ~ label[class^='inputtextBoxLabel'] {
+            @include shrinkLable();
+        }
+
+      
+    }
+   
+    
+}

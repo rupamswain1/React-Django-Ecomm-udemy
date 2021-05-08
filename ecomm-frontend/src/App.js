@@ -3,12 +3,14 @@ import Footer from './components/footer/Footer.component';
 import ProductPage from './pages/productPage/ProductPage.component';
 import CartPage from './pages/cartPage/CartPage.component';
 import HomePage from './pages/homePage/HomePage.component';
+import ModalManager from './pages/modalMaganer/ModalManger.component';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header/>
+        <ModalManager/>
           <Switch>
             <Route exact path='/' component={HomePage}/>
             <Route path="/product/:prodId" component={ProductPage}/>
