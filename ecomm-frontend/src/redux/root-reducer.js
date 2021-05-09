@@ -10,7 +10,7 @@ import {LoginReducer} from './login/login.reducer';
 const persitConfig={
     key:'root',
     storage,
-    whiteList:['cartReducer'],
+    whiteList:['cartReducer','LoginReducer'],
 }
 
 export const rootReducer=combineReducers({

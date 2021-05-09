@@ -1,12 +1,12 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './Header.style.scss';
-import {toggleLoginModalDisplay} from '../../redux/login/login.action';
+import {loginUserStart, toggleLoginModalDisplay} from '../../redux/login/login.action';
 
 const Header=()=>{
     const dispatch = useDispatch();
-
+    const {isAuthenticated,loginData} =useSelector(state=>state.LoginReducer)
     const toggleLoginModalDisplayLocal=()=>{
         dispatch(toggleLoginModalDisplay())
     }
@@ -31,9 +31,23 @@ const Header=()=>{
                         Cart
                     </div>
                 </Link>
-                <div className='option' onClick={()=>toggleLoginModalDisplayLocal()}>
-                    SignIn
-                </div>
+               {isAuthenticated?
+                    <div className='option'>
+                         <div className='dropDownHeader'>
+                            Hi,{loginData.name}
+                         </div>
+                         <div className='dropDown-content'>
+                            <Link to="#">Profile</Link>
+                            <Link to="#">Log Out</Link>
+                         </div>
+                    </div>
+                :
+                    <div className='option' onClick={()=>toggleLoginModalDisplayLocal()}>
+                        SignIn
+                    </div>
+                    
+                } 
+                
             </div>
         </nav>
     );

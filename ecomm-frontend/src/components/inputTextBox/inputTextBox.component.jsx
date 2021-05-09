@@ -6,6 +6,7 @@ const InputTextBox=({placeHolder, value, type, handleChange})=>{
         <div className={`inputtextBoxContainer-${placeHolder}`}>           
             <input name={placeHolder} id='Email' onChange={handleChange} type={type} value={value} className={`inputtextBoxInput-${placeHolder}`}/>
             <label className={`inputtextBoxLabel-${placeHolder}-${value.length?'shrink':''}`} for={`inputtextBoxLabel-${placeHolder}`}>{placeHolder}</label>
+            
         </div>
     )
 }

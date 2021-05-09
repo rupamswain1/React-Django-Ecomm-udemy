@@ -32,5 +32,25 @@
                 position:relative;
                 width: 60.5%;
             }
+            
+            .errorMessage{
+                position: relative;
+                color: red;
+                font-size: 75%;
+                left:-6vw;
+                top:-2vh;
+                //width:5vw;
+                text-align: center;
+            }
         }
+        .signInText{
+            position: relative;
+            left:23%;
+            top:-6vh;
+            font-size: 200%;
+            text-align: center;
+        }
+      
+        
+       
     }
